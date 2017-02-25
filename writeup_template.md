@@ -171,13 +171,15 @@ The code for making predictions on my final model is located in the tenth cell o
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Image			                        |     Prediction	        					| 
+|:-------------------------------------:|:---------------------------------------------:| 
+| Children crossing     		        | Children crossing  							| 
+| Roundabout mandatory     			    | Roundabout mandatory 							|
+| Keep right					        | Keep right									|
+| Stop	      		                    | Stop					 			          	|
+| Speed limit (60km/h)		            | Speed limit (60km/h)      					|
+| Pedestrians		                    | Pedestrians      						    	|
+| Right-of-way at the next intersection	| Right-of-way at the next intersection    		|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
