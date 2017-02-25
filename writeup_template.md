@@ -32,6 +32,9 @@ The goals / steps of this project are the following:
 [image11]: ./examples/ProbNIm6.png "Traffic Sign 6"
 [image12]: ./examples/ProbNIm7.png "Traffic Sign 7"
 
+[image20]: ./examples/ResultsNN.png "Results CNN"
+
+
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -130,39 +133,40 @@ My final model consisted of the following layers:
 
 The code for training the model is located in the cells 12, 13, 14 and 15 of the ipython notebook. 
 
-To train the model, I used parameteres usede in LeNete practice as a start point
+To train the model, as a start point parameteres of LeNet practice were used, later a lot of different parameters were used through different experiments. Finally next parameters were selected:
+
+EPOCHS = 15
+BATCH_SIZE = 100
+mu = 0
+sigma = 0.05  
+learning_rate = 0.001
+
+AdamOptimizer was used, also GradientDescentOptimizer was tried to change learning rate. But finally it was consider tha AdamOptimizer work better changing it automatically.
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the accuracy of the model is located in cell 18 of the Ipython notebook.
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+First architecture tried was LeNet, it was chosen, because it was implemented in the initial example. It was necessary add dropout layers to prevent overfitting, because the inital neural network tends to overfit quickly, parameter keep_prob was adjusted experimentally at 0.65. 
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-First architecture tried was LeNet, it was chosen, because it was implented in the initial example. It was necessary add dropout layers to prevent overfitting, because it tends to overfit quickly, parameter keep_prob was adjusted experimentally at 0.65. 
-
-Later a lot of differente architectures were tried. Adding layers, adding second stage like in the article recomended in the project, changing the size of the convolutions, feeding images with and without color.
+Later a lot of different architectures were tried. Adding layers, adding second stage with different configurations (like in the article recomended in the project), changing the size of the convolutions, feeding images with and without color...
 The best results were obtained with the proposed architecture.
 
-Hyperparameter epochs, batch_size, mu, sigma, keep_prob and rate were adjusted through lot of experiments until determine next parameters:
+Hyperparameters epochs, batch_size, mu, sigma, keep_prob and rate were adjusted through lot of experiments until determine the parameters exposed before.
 
-One of the keys was use convoution of 3x3 instead 5x5 and use features of 32, 64 and 128 in the layers 1, 2 and 3.
+The key was add one layer more, use convoution size of 3x3 instead of 5x5 and use features of 32, 64 and 128 in the layers 1, 2 and 3.
 
-Thes best results were obtained making training in two steps 
+My final model results were:
+* training set accuracy of 0.998
+* validation set accuracy of 0.991
+* test set accuracy of 0.974
 
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Results can vary also depending on the parameters used for augment images.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+![alt text][image20]
+
+
+
 
 ###Test a Model on New Images
 
@@ -171,8 +175,6 @@ If a well known architecture was chosen:
 Here are seven German traffic signs that I found on the web:
 
 ![alt text][image5]
-
-The first image might be difficult to classify because ...
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -191,7 +193,7 @@ Here are the results of the prediction:
 | Right-of-way at the next intersection	| Right-of-way at the next intersection    		|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess all traffic signs, which gives an accuracy of 100%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
