@@ -80,7 +80,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 The code for this steps is contained in cells from five to eight of the IPython notebook.
 
-In the dataset are images with different conditions of luminance, to make easy for the neural network images are corrected to similar conditions. That is the reason because the histogram of luminance of each image is equalized. For this task Images are converted from RGB Colorspace to YUV. Then Y component is equalized. (Functions: cv2.cvtColor and cv2.equalizeHist)
+In the dataset are images with different conditions of luminance, to make easy for the neural network, images are corrected to similar conditions. That is the reason because the histogram of luminance of each image is equalized. For this task Images are converted from RGB Colorspace to YUV. Then Y component is equalized. (Functions: cv2.cvtColor and cv2.equalizeHist)
 
 Also as we can see in the previous histogram, number of images in classes are not balanced, that may cause a biased result of the neural network trough the majority class. So I have create a function to augmentate data (Cell 5) inspired in opencv functions of the next link [geometric transformations](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_geometric_transformations/py_geometric_transformations.html)
 (Functions used: cv2.getRotationMatrix2D, cv2.getAffineTransform and cv2.warpAffine)
@@ -103,7 +103,7 @@ Finaly train, valid and test data is normalized (cell 11) between -1 and 1, to g
 
 ####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh cell of the ipython notebook. 
+The code for my final model is located in the cell 13 of the ipython notebook. 
 
 My final model consisted of the following layers:
 
@@ -131,7 +131,8 @@ My final model consisted of the following layers:
 
 ####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The code for training the model is located in the cells 12, 13, 14 and 15 of the ipython notebook. 
+The code for define and train the model is located from cell 12 to 17. 
+The code for training the model is located in cell 17 of the ipython notebook. 
 
 To train the model, as a start point parameteres of LeNet practice were used, later a lot of different parameters were used through different experiments. Finally next parameters were selected:
 
@@ -166,19 +167,17 @@ Results can vary also depending on the parameters used for augment images.
 ![alt text][image20]
 
 
-
-
 ###Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are seven German traffic signs that I found on the web:
+In cell 19 we can seven signal from the web, here also:
 
 ![alt text][image5]
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
+The code for making predictions on my final model is located cell 22 of the Ipython notebook.
 
 Here are the results of the prediction:
 
@@ -197,24 +196,63 @@ The model was able to correctly guess all traffic signs, which gives an accuracy
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
+In cell 25 we can see the softmax probabilities of each image and in cell 26 we can see also as bar chart representation.
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
 ![alt text][image6]
+
+28	Children crossing
+29	Bicycles crossing
+20	Dangerous curve to the right
+15	No vehicles
+27	Pedestrians
+
 ![alt text][image7]
+
+40	Roundabout mandatory
+1	Speed limit (30km/h)
+38	Keep right
+35	Ahead only
+11	Right-of-way at the next intersection
+
 ![alt text][image8]
+
+38	Keep right
+34	Turn left ahead
+40	Roundabout mandatory
+12	Priority road
+0	Speed limit (20km/h)
+
 ![alt text][image9]
+
+14	Stop
+5	Speed limit (80km/h)
+20	Dangerous curve to the right
+6	End of speed limit (80km/h)
+29	Bicycles crossing
+
 ![alt text][image10]
+
+3	Speed limit (60km/h)
+5	Speed limit (80km/h)
+2	Speed limit (50km/h)
+28	Children crossing
+31	Wild animals crossing
+
 ![alt text][image11]
+
+27	Pedestrians
+24	Road narrows on the right
+11	Right-of-way at the next intersection
+19	Dangerous curve to the left
+26	Traffic signals
+
+
 ![alt text][image12]
+
+11	Right-of-way at the next intersection
+30	Beware of ice/snow
+27	Pedestrians
+18	General caution
+28	Children crossing
+
