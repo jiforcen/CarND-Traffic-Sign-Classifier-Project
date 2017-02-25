@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image1]: ./examples/ImagesExamples.png "Example images per class"
 [image2]: ./examples/HistogramOriginal.png "Histogram of the train data set"
 [image3]: ./examples/HistogramAugmented.png "Histogram of augmented train dataset"
-[image4]: ./examples/ImageTransformation.jpg "Image equalization and transformation"
+[image4]: ./examples/ImageTransformation.png "Image equalization and transformation"
 [image5]: ./examples/NewImages.png "New Images"
 [image6]: ./examples/ProbNIm1.png "Traffic Sign 1"
 [image7]: ./examples/ProbNIm2.png "Traffic Sign 2"
