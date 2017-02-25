@@ -211,3 +211,10 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 
 For the second image ... 
+![alt text][image6]
+![alt text][image7]
+![alt text][image8]
+![alt text][image9]
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
