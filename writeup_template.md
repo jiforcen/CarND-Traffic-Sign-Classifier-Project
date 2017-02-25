@@ -201,58 +201,58 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 ![alt text][image6]
 
-28	Children crossing
-29	Bicycles crossing
-20	Dangerous curve to the right
-15	No vehicles
-27	Pedestrians
+|28	|Children crossing|
+|29	|Bicycles crossing|
+|20	|Dangerous curve to the right|
+|15	|No vehicles|
+|27	|Pedestrians|
 
 ![alt text][image7]
 
-40	Roundabout mandatory
-1	Speed limit (30km/h)
-38	Keep right
-35	Ahead only
-11	Right-of-way at the next intersection
+|40	|Roundabout mandatory|
+|1	|Speed limit (30km/h)|
+|38|	Keep right|
+|35|	Ahead only|
+|11|	Right-of-way at the next intersection|
 
 ![alt text][image8]
 
-38	Keep right
-34	Turn left ahead
-40	Roundabout mandatory
-12	Priority road
-0	Speed limit (20km/h)
+|38	|Keep right|
+|34	|Turn left ahead|
+|40	|Roundabout mandatory|
+|12	|Priority road|
+|0	Speed limit (20km/h)
 
 ![alt text][image9]
 
-14	Stop
-5	Speed limit (80km/h)
-20	Dangerous curve to the right
-6	End of speed limit (80km/h)
-29	Bicycles crossing
+|14	|Stop|
+|5	|Speed limit (80km/h)|
+|20	|Dangerous curve to the right|
+|6	|End of speed limit (80km/h)|
+|29	|Bicycles crossing|
 
 ![alt text][image10]
 
-3	Speed limit (60km/h)
-5	Speed limit (80km/h)
-2	Speed limit (50km/h)
-28	Children crossing
-31	Wild animals crossing
+|3	|Speed limit (60km/h)|
+|5	|Speed limit (80km/h)|
+|2	|Speed limit (50km/h)|
+|28	|Children crossing|
+|31	|Wild animals crossing|
 
 ![alt text][image11]
 
-27	Pedestrians
-24	Road narrows on the right
-11	Right-of-way at the next intersection
-19	Dangerous curve to the left
-26	Traffic signals
+|27	|Pedestrians|
+|24	|Road narrows on the right|
+|11	|Right-of-way at the next intersection|
+|19	|Dangerous curve to the left|
+|26	|Traffic signals|
 
 
 ![alt text][image12]
 
-11	Right-of-way at the next intersection
-30	Beware of ice/snow
-27	Pedestrians
-18	General caution
-28	Children crossing
+|11	|Right-of-way at the next intersection|
+|30	|Beware of ice/snow|
+|27	|Pedestrians|
+|18	|General caution|
+|28	|Children crossing|
 
