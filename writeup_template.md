@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./examples/ImageTransformation.png "Image equalization and transformation"
 [image5]: ./examples/NewImages.png "New Images"
 [image6]: ./examples/ProbNIm1.png "Traffic Sign 1"
-[image7]: ./examples/ProbNIm2.png "Traffic Sign 2"
+[image7]: ./examples/ProbNIm2.png.png "Traffic Sign 2"
 [image8]: ./examples/ProbNIm3.png "Traffic Sign 3"
 [image9]: ./examples/ProbNIm4.png "Traffic Sign 4"
 [image10]: ./examples/ProbNIm5.png "Traffic Sign 5"
