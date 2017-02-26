@@ -1,8 +1,6 @@
 #**Traffic Sign Recognition** 
 
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+##Writeup Juan Ignacio Forcén
 
 ---
 
@@ -41,9 +39,9 @@ The goals / steps of this project are the following:
 ---
 ###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+####This submission includes a reference to the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/jiforcen/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+Here is a link to my [project code](https://github.com/jiforcen/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ###Data Set Summary & Exploration
 
@@ -61,13 +59,11 @@ signs data set:
 
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
-
-In cell three is showed one random image of the Train Set per class.
+In cell three of the IPython notebook is the code for visualize one random image of each class of the trainset.
 
 ![alt text][image1]
 
-Here is an exploratory visualization of the data set. It is a bar chart showing the number of images per class. We can see that number of images per class are not balanced.
+This bar chart showing the number of images per class is generated in cell four. We can see that number of images per class are not balanced.
 
 
 ![alt text][image2]
@@ -78,22 +74,24 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-The code for this steps is contained in cells from five to eight of the IPython notebook.
+Code for this steps is contained in cells from five to eight of the IPython notebook.
 
-In the dataset are images with different conditions of luminance, to make easy for the neural network, images are corrected to similar conditions. That is the reason because the histogram of luminance of each image is equalized. For this task Images are converted from RGB Colorspace to YUV. Then Y component is equalized. (Functions: cv2.cvtColor and cv2.equalizeHist)
+In the dataset are images with different conditions of luminance, to make easy for the neural network, images are corrected to similar conditions. To achieve that histogram of luminance of each image is equalized. For this task Images are converted from RGB Colorspace to YUV. Then Y component is equalized. (Functions: cv2.cvtColor and cv2.equalizeHist)
 
 Also as we can see in the previous histogram, number of images in classes are not balanced, that may cause a biased result of the neural network trough the majority class. So I have create a function to augmentate data (Cell 5) inspired in opencv functions of the next link [geometric transformations](http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_geometric_transformations/py_geometric_transformations.html)
-(Functions used: cv2.getRotationMatrix2D, cv2.getAffineTransform and cv2.warpAffine)
+(Functions used: cv2.getRotationMatrix2D, cv2.getAffineTransform and cv2.warpAffine). That functions returns a radomly transformed image from a previous one.
 
-An example of both techniques is shown in cell 6.
+An example of both techniques with a randomi image is shown in cell 6.
 
 ![alt text][image4]
 
 In the images before we can see a random image, random image equalized and this random image equalized and transformed.
 
-In cell 8 data is augmented. For this new images are created with the function explained before for classes with less images than a minimun stablished in the function. This new train set is saved into a new file. In next cycle this images can be recovered to avoid this slow task. As we can see in the code images are equalized before data augmentation to avoid consider in the histogram black areas introduced by the transformation.
+In cell 8 data is augmented. New images are created in classes with less images than a minimun stablished with the variable('min_nImages'). This images are created with the function explained before.
 
-Now we can check the histogram again (cell 9) and see the new distribution of images per class.
+This new train set is saved into a new file. In next cycle this images can be recovered to avoid the slow task of generate images. As we can see in the code, images are equalized before data augmentation, this is to avoid consider in the histogram black areas introduced by the transformation.
+
+Now we can check the bar chart of images per clas again (cell 9), and see that new distribution of images per class.
 
 ![alt text][image3]
 
@@ -131,10 +129,9 @@ My final model consisted of the following layers:
 
 ####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The code for define and train the model is located from cell 12 to 17. 
-The code for training the model is located in cell 17 of the ipython notebook. 
+The code for define and train the model is located from cell 12 to 17. Concretely code for training the model is in cell 17.
 
-To train the model, as a start point parameteres of LeNet practice were used, later a lot of different parameters were used through different experiments. Finally next parameters were selected:
+To train the model, as a start point parameteres of LeNet practice were used, later a lot of different parameters were tested through different experiments. Finally next parameters were selected:
 
 EPOCHS = 15
 BATCH_SIZE = 100
@@ -142,13 +139,13 @@ mu = 0
 sigma = 0.05  
 learning_rate = 0.001
 
-AdamOptimizer was used, also GradientDescentOptimizer was tried to change learning rate. But finally it was consider tha AdamOptimizer work better changing it automatically.
+AdamOptimizer was used, also GradientDescentOptimizer was tried to change learning rate. But finally it was consider that AdamOptimizer work better changing learning rate automatically.
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in cell 18 of the Ipython notebook.
+Code for calculating the accuracy of the model is located in cell 18 of the Ipython notebook.
 
-First architecture tried was LeNet, it was chosen, because it was implemented in the initial example. It was necessary add dropout layers to prevent overfitting, because the inital neural network tends to overfit quickly, parameter keep_prob was adjusted experimentally at 0.65. 
+First architecture tried was LeNet because it was implemented in the initial example. It was necessary to add dropout layers to prevent overfitting, because the inital neural network tends to overfit quickly, parameter keep_prob was adjusted experimentally at 0.65. 
 
 Later a lot of different architectures were tried. Adding layers, adding second stage with different configurations (like in the article recomended in the project), changing the size of the convolutions, feeding images with and without color...
 The best results were obtained with the proposed architecture.
@@ -196,11 +193,16 @@ The model was able to correctly guess all traffic signs, which gives an accuracy
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-In cell 25 we can see the softmax probabilities of each image and in cell 26 we can see also as bar chart representation.
+In cell 25 we can see the softmax probabilities of each image, in cell 26 we can see also as bar chart representation.
+
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 ![alt text][image6]
 
+
+
+| Class number			                        |     Description	        					| 
+|:-------------------------------------:|:---------------------------------------------:|
 |28	|Children crossing|
 |29	|Bicycles crossing|
 |20	|Dangerous curve to the right|
