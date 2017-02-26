@@ -195,66 +195,95 @@ The model was able to correctly guess all traffic signs, which gives an accuracy
 
 In cell 25 we can see the softmax probabilities of each image, in cell 26 we can see also as bar chart representation.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model gives more probability to "Children crossing", as second option is "Bicycles crossing", but with a probability 6 times less.
 
 ![alt text][image6]
 
 
-
-| Class number			                        |     Description	        					| 
-|:-------------------------------------:|:---------------------------------------------:|
-|28	|Children crossing|
-|29	|Bicycles crossing|
-|20	|Dangerous curve to the right|
-|15	|No vehicles|
-|27	|Pedestrians|
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|28	|Children crossing|30.23
+|29	|Bicycles crossing|5.81
+|20	|Dangerous curve to the right|-4.69
+|15	|No vehicles|-6.42
+|27	|Pedestrians|-11.80
 
 ![alt text][image7]
 
-|40	|Roundabout mandatory|
-|1	|Speed limit (30km/h)|
-|38|	Keep right|
-|35|	Ahead only|
-|11|	Right-of-way at the next intersection|
+For the second image, the model is completely sure that signal is "Roundabout mandatory", because is the unique option with positive probability.
+
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|40	|Roundabout mandatory|16.33|
+|1	|Speed limit (30km/h)|-6.24|
+|38|	Keep right|-7.23|
+|35|	Ahead only|-7.37|
+|11|	Right-of-way at the next intersection|-7.58|
 
 ![alt text][image8]
 
-|38	|Keep right|
-|34	|Turn left ahead|
-|40	|Roundabout mandatory|
-|12	|Priority road|
-|0	Speed limit (20km/h)
+In the the trird image, the model is also sure that signal is "Keep right", because is the unique option with positive probability.
+
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|38	|Keep right|18.95|
+|34	|Turn left ahead|-3.16|
+|40	|Roundabout mandatory|-3.21|
+|12	|Priority road|-6.28|
+|0	|Speed limit (20km/h)|-6.46|
 
 ![alt text][image9]
 
-|14	|Stop|
-|5	|Speed limit (80km/h)|
-|20	|Dangerous curve to the right|
-|6	|End of speed limit (80km/h)|
-|29	|Bicycles crossing|
+In the the fourth image, the model is also sure that signal is "Stop", because is the unique option with positive probability.
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|14	|Stop|20.42|
+|5	|Speed limit (80km/h)|-0.22|
+|20	|Dangerous curve to the right|-6.16|
+|6	|End of speed limit (80km/h)|-7.67|
+|29	|Bicycles crossing|-7.97|
 
 ![alt text][image10]
 
-|3	|Speed limit (60km/h)|
-|5	|Speed limit (80km/h)|
-|2	|Speed limit (50km/h)|
-|28	|Children crossing|
-|31	|Wild animals crossing|
+In the the fifth image, the model predict that signal is "Speed limit (60km/h)", as second option with less than a half of probability is "Speed limit (80km/h)" which is quite similar.
+
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|3	|Speed limit (60km/h)|7.92|
+|5	|Speed limit (80km/h)|3.13|
+|2	|Speed limit (50km/h)|-0.77|
+|28	|Children crossing|-1.77|
+|31	|Wild animals crossing|-5.60|
 
 ![alt text][image11]
 
-|27	|Pedestrians|
-|24	|Road narrows on the right|
-|11	|Right-of-way at the next intersection|
-|19	|Dangerous curve to the left|
-|26	|Traffic signals|
+
+In the the sixth image, the model predict that signal is "Pedestrians", as second option with moreless five times less of probability is "Road narrows on the right" which can be similar.
+
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|27	|Pedestrians|14.06|
+|24	|Road narrows on the right|3.11|
+|11	|Right-of-way at the next intersection|2.72|
+|19	|Dangerous curve to the left|1.98|
+|26	|Traffic signals|0.78|
 
 
 ![alt text][image12]
 
-|11	|Right-of-way at the next intersection|
-|30	|Beware of ice/snow|
-|27	|Pedestrians|
-|18	|General caution|
-|28	|Children crossing|
+
+Finally in the the seventh image, the model predict that signal is "Right-of-way at the next intersection".
+
+| Class number	| Description	  | Softmax probabilities|
+|:-------------:|:-------------:|:--------------------:|
+|11	|Right-of-way at the next intersection|22.90|
+|30	|Beware of ice/snow|4.27|
+|27	|Pedestrians|0.61|
+|18	|General caution|-1.99|
+|28	|Children crossing|-8.03|
 
