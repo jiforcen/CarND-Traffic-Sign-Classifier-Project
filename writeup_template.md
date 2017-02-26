@@ -1,6 +1,6 @@
 #**Traffic Sign Recognition** 
 
-##Writeup Juan Ignacio Forcén
+##Writeup - Juan Ignacio Forcén
 
 ---
 
@@ -52,10 +52,10 @@ The code for this step is contained in the second code cell of the IPython noteb
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is 34799
-* The size of test set is 12630
-* The shape of a traffic sign image is [32, 32]
-* The number of unique classes/labels in the data set is 43
+* The size of training set is 34799.
+* The size of test set is 12630.
+* The shape of a traffic sign image is [32, 32].
+* The number of unique classes/labels in the data set is 43.
 
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
@@ -202,16 +202,15 @@ For the first image, the model gives more probability to "Children crossing", as
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
-|28	|Children crossing|30.23
-|29	|Bicycles crossing|5.81
-|20	|Dangerous curve to the right|-4.69
-|15	|No vehicles|-6.42
-|27	|Pedestrians|-11.80
-
-![alt text][image7]
+|28	|Children crossing|30.23|
+|29	|Bicycles crossing|5.81|
+|20	|Dangerous curve to the right|-4.69|
+|15	|No vehicles|-6.42|
+|27	|Pedestrians|-11.80|
 
 For the second image, the model is completely sure that signal is "Roundabout mandatory", because is the unique option with positive probability.
 
+![alt text][image7]
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
@@ -221,10 +220,10 @@ For the second image, the model is completely sure that signal is "Roundabout ma
 |35|	Ahead only|-7.37|
 |11|	Right-of-way at the next intersection|-7.58|
 
-![alt text][image8]
 
 In the the trird image, the model is also sure that signal is "Keep right", because is the unique option with positive probability.
 
+![alt text][image8]
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
@@ -234,9 +233,9 @@ In the the trird image, the model is also sure that signal is "Keep right", beca
 |12	|Priority road|-6.28|
 |0	|Speed limit (20km/h)|-6.46|
 
-![alt text][image9]
-
 In the the fourth image, the model is also sure that signal is "Stop", because is the unique option with positive probability.
+
+![alt text][image9]
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
@@ -246,10 +245,9 @@ In the the fourth image, the model is also sure that signal is "Stop", because i
 |6	|End of speed limit (80km/h)|-7.67|
 |29	|Bicycles crossing|-7.97|
 
-![alt text][image10]
-
 In the the fifth image, the model predict that signal is "Speed limit (60km/h)", as second option with less than a half of probability is "Speed limit (80km/h)" which is quite similar.
 
+![alt text][image10]
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
@@ -259,11 +257,9 @@ In the the fifth image, the model predict that signal is "Speed limit (60km/h)",
 |28	|Children crossing|-1.77|
 |31	|Wild animals crossing|-5.60|
 
-![alt text][image11]
-
-
 In the the sixth image, the model predict that signal is "Pedestrians", as second option with moreless five times less of probability is "Road narrows on the right" which can be similar.
 
+![alt text][image11]
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
@@ -273,11 +269,9 @@ In the the sixth image, the model predict that signal is "Pedestrians", as secon
 |19	|Dangerous curve to the left|1.98|
 |26	|Traffic signals|0.78|
 
+Finally in the the seventh image, the model predict that signal is "Right-of-way at the next intersection".
 
 ![alt text][image12]
-
-
-Finally in the the seventh image, the model predict that signal is "Right-of-way at the next intersection".
 
 | Class number	| Description	  | Softmax probabilities|
 |:-------------:|:-------------:|:--------------------:|
