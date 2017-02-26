@@ -172,6 +172,8 @@ In cell 19 we can seven signal from the web, here also:
 
 ![alt text][image5]
 
+The seventh signals from the web have good conditions of brightnes, contrast and without oclusions. Only small changes in brightness are in images like the stop signal, which have bit more light in the bottom. So is expected to obtain good results in the model´s prediction in all the signals.
+
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 The code for making predictions on my final model is located cell 22 of the Ipython notebook.
@@ -188,8 +190,11 @@ Here are the results of the prediction:
 | Pedestrians		                    | Pedestrians      						    	|
 | Right-of-way at the next intersection	| Right-of-way at the next intersection    		|
 
-
 The model was able to correctly guess all traffic signs, which gives an accuracy of 100%.
+
+In test set this model have an accuracy of 97.4%, while in train set and validation set have more than 99%. After obtain this high accuracy in images with very different conditions in bright, contrast and size is normal have a 100% of accuracy clasifying this signals from internet which have very good conditions.
+
+As it was expected the model classify correctly signals with standard conditions.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
